@@ -2,10 +2,12 @@ import express, { request } from 'express'
 
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 const url = 'mongodb+srv://jeka228:joker123@cluster1.dehqj.mongodb.net/example1?retryWrites=true&w=majority';
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 let ObjectID = require('mongodb').ObjectID;
